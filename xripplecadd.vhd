@@ -1,4 +1,4 @@
--- classic ripple carry adder (first stage is a half adder)
+-- stackable ripple carry adder (first stage is a full adder)
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned;
@@ -32,11 +32,10 @@ architecture struct of ripplecadd is
 
   signal carries : std_logic_vector(n-2 downto 0);
   begin
-    ha : halfadd port map (A(0), B(0), S(0), carries(0));
-    for i in 1 to n-2 generate
-      fa: fulladd port map (A(i), B(i), carries(i-1), S(i), carries(i));
+    for i in 0 to n-2 generate
+      fa: fulladd port map (A(i), B(i), carries(i), S(i), carries(i+1));
     end generate;
-    last : fulladd port map (A(n-1), B(n-1), carries(n-2), S(n-1), cout;
+    last : fulladd port map (A(n-1), B(n-1), carries(n-1), S(n-1), cout;
 end struct;
 
 architecture beh of ripplecadd is

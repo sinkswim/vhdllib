@@ -13,8 +13,8 @@ architecture beh of dflop is
 begin
   process(clk)
   begin
-    if(clk = '1' and clk'event)
-      if(rst = '1')
+    if(clk = '1' and clk'event) then
+      if(rst = '1') then
         Q <= '0';
       else
         Q <= D;
