@@ -1,17 +1,17 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity n2to1mux is
+entity n4to1mux is
   port(
     sw : in std_logic_vector(1 downto 0);
     x : in std_logic_vector(3 downto 0);
     y : out std_logic
   );
-end n2to1mux;
+end n4to1mux;
 
-architecture beh of n2to1mux is
+architecture beh of n4to1mux is
   begin
-    
+
     process(sw, x)
     begin
         case sw is

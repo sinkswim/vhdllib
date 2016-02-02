@@ -7,3 +7,4 @@ The library is divided in folders:
     * math : from half adders to ALUs
     * storage : from flip flops to register files
     * mem : RAM, ROM
+    * fsm : a collection of various fsm and their various design techniques
