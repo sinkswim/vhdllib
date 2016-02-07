@@ -11,6 +11,7 @@ entity register is
   );
 end register;
 
+-- synchronous reset
 architecture beh of register is
   signal R : std_logic_vector(n-1 downto 0);
 begin
@@ -37,6 +38,6 @@ architecture gen of register is
   end component;
 begin
   for i in 0 to n-1 generate
-    dff : dflop port map (I(i) , clk, rst, Q(i));
+    dff : dflop port map (I(i) , clk, rst, Q(i));   -- choose beh1 or beh2 
   end generate;
 end gen;

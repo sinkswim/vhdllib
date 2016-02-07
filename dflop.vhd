@@ -9,7 +9,21 @@ port(
 );
 end dflop;
 
-architecture beh of dflop is
+-- asynchronous reset
+architecture beh1 of dflop is
+begin
+  process(clk, rst)
+  begin
+    if(rst = '1') then
+      Q <= '0';
+    elsif(clk = '1' and clk'event) then
+        Q <= D;
+    end if;
+  end process;
+end beh1;
+
+-- synchronous reset
+architecture beh2 of dflop is
 begin
   process(clk)
   begin
@@ -21,4 +35,4 @@ begin
       end if;
     end if;
   end process;
-end beh;
+end beh2;
