@@ -9,4 +9,5 @@ The library is divided into folders:
 * mem : RAM, ROM
 * fsm : a collection of various fsm and their various design techniques
 * control units: CUs for MIPS-like processors
+* free range: solutions to exercises found in Free Range VHDL book
 
